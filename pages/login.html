@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Đăng nhập | BookStore</title>
+  <link rel="stylesheet" href="../styles/variables.css" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/responsive.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">📚 <span>BookStore</span></a>
+      <nav class="nav">
+        <a href="./home.html">Trang chủ</a>
+        <a href="./products.html">Sản phẩm</a>
+        <a href="./cart.html">Giỏ hàng</a>
+      </nav>
+      <div class="auth-actions" id="authActions"></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container form-wrap">
+      <h1 class="page-title">Đăng nhập</h1>
+      <form id="loginForm" class="form">
+        <div class="form-group">
+          <label>Tên đăng nhập</label>
+          <input name="username" type="text" required />
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input name="password" type="password" required />
+        </div>
+        <button class="btn btn-primary" type="submit">Đăng nhập</button>
+        <p class="muted">Chưa có tài khoản?
+          <a href="./register.html">Đăng ký</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 BookStore • Designed by Bạn</div>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    App.mountHeader('login');
+    Auth.mountLogin('loginForm');
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tất cả sách | BookStore</title>
+  <link rel="stylesheet" href="../styles/variables.css" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/responsive.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">📚 <span>BookStore</span></a>
+      <nav class="nav">
+        <a href="./home.html">Trang chủ</a>
+        <a class="active" href="./products.html" data-auth="true">Sản phẩm</a>
+        <a href="./cart.html" data-auth="true">Giỏ hàng</a>
+      </nav>
+      <div class="auth-actions" id="authActions"></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="page-title">Thư viện sách</h1>
+
+      <div class="toolbar">
+        <div class="field">
+          <span class="icon">🔎</span>
+          <input id="searchInput" type="text" placeholder="Tìm kiếm sách..." />
+        </div>
+
+        <select id="categorySelect">
+          <option value="__all__">Tất cả thể loại</option>
+        </select>
+      </div>
+
+      <div id="productGrid" class="grid grid-4"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 BookStore • Designed by Bạn</div>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    Auth.requireAuth(); // BẮT BUỘC ĐĂNG NHẬP
+    App.mountHeader('products');
+    App.renderProductsPage({
+      gridId: 'productGrid',
+      searchId: 'searchInput',
+      categoryId: 'categorySelect'
+    });
+  </script>
+</body>
+</html>

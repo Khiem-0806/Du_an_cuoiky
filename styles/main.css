@@ -1,0 +1,85 @@
+/* Reset */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#f8fafc}
+
+/* Layout */
+.container{max-width:var(--container);margin:0 auto;padding:0 16px}
+.section{padding:48px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:16px}
+.page-title{margin:0 0 12px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:5;background:var(--panel);color:#fff;box-shadow:var(--shadow)}
+.header-inner{display:flex;align-items:center;gap:16px;padding:12px 0}
+.logo{color:#fff;text-decoration:none;font-weight:700;font-size:20px;display:flex;gap:8px;align-items:center}
+.logo span{letter-spacing:.5px}
+.nav{display:flex;gap:16px;margin-left:16px}
+.nav a{color:#e5ecff;text-decoration:none;padding:8px 10px;border-radius:10px}
+.nav a.active,.nav a:hover{background:rgba(255,255,255,.15);color:#fff}
+.nav a.disabled{opacity:.6;pointer-events:none}
+.auth-actions{margin-left:auto;display:flex;gap:10px;align-items:center}
+.hello{opacity:.9}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,#eef4ff,#ffffff);padding:56px 0;border-bottom:1px solid var(--border)}
+.hero-sm{padding:36px 0}
+.hero .brand{color:var(--brand)}
+.hero h1{margin:0 0 8px}
+.hero-actions{display:flex;gap:12px;margin-top:16px}
+
+/* Buttons */
+.btn{background:#fff;border:1px solid var(--border);padding:10px 16px;border-radius:12px;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn-primary{background:var(--brand);color:#fff;border-color:var(--brand-2)}
+.btn-primary:hover{background:var(--brand-2)}
+.icon-btn{border:none;background:#fff;padding:8px 10px;border-radius:10px;cursor:pointer;border:1px solid var(--border)}
+.icon-btn.danger{color:#ef4444;border-color:#fecaca;background:#fff5f5}
+
+/* Grid */
+.grid{display:grid;gap:16px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+
+/* Card */
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.card-media{aspect-ratio:4/3;overflow:hidden;background:#f1f5f9}
+.card-media img{width:100%;height:100%;object-fit:cover;display:block}
+.card-body{padding:14px}
+.card-title{margin:0 0 6px;font-size:18px}
+.card-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.price{font-weight:700}
+
+/* Toolbar */
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.field{position:relative}
+.field .icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.6}
+.field input{padding:10px 12px 10px 32px;border:1px solid var(--border);border-radius:12px;width:280px}
+
+/* Form */
+.form-wrap{max-width:520px}
+.form{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.form input{padding:10px 12px;border:1px solid var(--border);border-radius:12px}
+
+/* Cart */
+.cart-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.cart-table th,.cart-table td{padding:12px;border-top:1px solid var(--border);text-align:left}
+.cart-table thead th{background:#f1f5f9}
+.thumb{width:64px;height:64px;object-fit:cover;border-radius:8px}
+.qty{width:72px;padding:8px;border-radius:8px;border:1px solid var(--border)}
+.cart-total{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.total-row{display:flex;gap:10px;align-items:center}
+.bold{font-weight:700}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);padding:16px 0;background:#fff;margin-top:36px}
+
+/* Links & texts */
+.link{color:var(--brand);text-decoration:none}
+.muted{color:var(--muted);margin:4px 0}
+
+/* Toast */
+.toast{position:fixed;right:16px;bottom:16px;transform:translateY(14px);opacity:0;transition:.2s;padding:12px 14px;border-radius:12px;background:#111827;color:#fff;box-shadow:var(--shadow);z-index:40}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.success{background:var(--success)}
+.toast.error{background:var(--error)}

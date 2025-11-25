@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giỏ hàng | BookStore</title>
+  <link rel="stylesheet" href="../styles/variables.css" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/responsive.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">📚 <span>BookStore</span></a>
+      <nav class="nav">
+        <a href="./home.html">Trang chủ</a>
+        <a href="./products.html" data-auth="true">Sản phẩm</a>
+        <a class="active" href="./cart.html" data-auth="true">Giỏ hàng</a>
+      </nav>
+      <div class="auth-actions" id="authActions"></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="page-title">Giỏ hàng của bạn</h1>
+
+      <div class="cart">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Hình ảnh</th>
+              <th>Tên sách</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+              <th>Thành tiền</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cartBody"></tbody>
+        </table>
+
+        <div class="cart-total">
+          <div class="total-row">
+            <span>Tổng cộng:</span>
+            <strong id="grandTotal">0đ</strong>
+          </div>
+          <button class="btn btn-primary" id="checkoutBtn">Thanh toán</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 BookStore • Designed by Bạn</div>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    Auth.requireAuth(); // BẮT BUỘC ĐĂNG NHẬP
+    App.mountHeader('cart');
+    Cart.renderCart('cartBody', 'grandTotal', 'checkoutBtn');
+  </script>
+</body>
+</html>
