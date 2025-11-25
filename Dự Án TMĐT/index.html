@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BookStore</title>
+  <link rel="stylesheet" href="./styles/variables.css" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/responsive.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="./index.html">📚 <span>BookStore</span></a>
+      <nav class="nav">
+        <a href="./pages/home.html">Trang chủ</a>
+        <a href="./pages/products.html" data-auth="true">Sản phẩm</a>
+        <a href="./pages/cart.html" data-auth="true">Giỏ hàng</a>
+      </nav>
+      <div class="auth-actions" id="authActions"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Chào mừng đến với <span class="brand">BookStore</span></h1>
+      <p>Khám phá hàng ngàn đầu sách chất lượng từ các tác giả nổi tiếng.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="./pages/products.html">Khám phá ngay</a>
+        <a class="btn" href="./pages/login.html" id="ctaAuth">Đăng nhập để mua</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Sách nổi bật</h2>
+        <a class="link" href="./pages/products.html">Xem tất cả →</a>
+      </div>
+      <div id="featuredGrid" class="grid grid-4"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 BookStore • Designed by Bạn</div>
+  </footer>
+
+  <script src="./js/api.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/cart.js"></script>
+  <script src="./js/app.js"></script>
+  <script>
+    App.mountHeader('index');
+    App.renderFeatured('featuredGrid', 6);
+  </script>
+</body>
+</html>
